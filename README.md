@@ -15,7 +15,7 @@ docker-compose up server
 -sql orm add. 
 
 ++debugger ok
-
+++logger ok
 
 install and upgrade 
 pip install --upgrade -r requirements.txt
@@ -25,3 +25,4 @@ issues suggestions
 
 "ImportError: No Module named six; six already installed"
 pip3  install --ignore-installed six
+

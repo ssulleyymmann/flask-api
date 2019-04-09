@@ -1,11 +1,14 @@
 import os
+from services.configService import ConfigService
 
-env = os.environ.get("PYTHON_ENV", "development")
+env = os.environ.get("FLASK_ENV", "development")
 port = os.environ.get("PORT", 8080)
 
-all_environments = {
-    "development": { "port": 5000, "debug": True, "swagger-url": "/api/swagger" },
-    "production": { "port": port, "debug": False, "swagger-url": None  }
-}
+all_environments = ConfigService(env).config
 
-environment_config = all_environments[env]
+# all_environments = {
+#     "development": { "port": 5000, "debug": True, "swagger-url": "/api/swagger" },
+#     "production": { "port": port, "debug": False, "swagger-url": None  }
+# }
+print (all_environments)
+environment_config = all_environments

@@ -1,7 +1,5 @@
 {
     "python.linting.pylintEnabled": true,
     "python.linting.enabled": true,
-    "python.envFile": ".env",
-    "python.linting.flake8Enabled": false,
     "python.pythonPath": "C:\\Python373\\python.exe"
 }

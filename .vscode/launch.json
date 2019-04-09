@@ -5,54 +5,14 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "Python: Current File (Integrated Terminal)",
-            "type": "python",
-            "request": "launch",
-            "program": "${file}",
-            "console": "integratedTerminal"
-        },
-        {
-            "name": "Python: Remote Attach",
-            "type": "python",
-            "request": "attach",
-            "port": 5678,
-            "host": "localhost",
-            "pathMappings": [
-                {
-                    "localRoot": "${workspaceFolder}",
-                    "remoteRoot": "."
-                }
-            ]
-        },
-        {
-            "name": "Python: Module",
-            "type": "python",
-            "request": "launch",
-            "module": "enter-your-module-name-here",
-            "console": "integratedTerminal"
-        },
-        {
-            "name": "Python: Django",
-            "type": "python",
-            "request": "launch",
-            "program": "${workspaceFolder}/manage.py",
-            "console": "integratedTerminal",
-            "args": [
-                "runserver",
-                "--noreload",
-                "--nothreading"
-            ],
-            "django": true
-        },
-        {
-            "name": "Python: Flask",
+            "name": "dev-Python: Flask",
             "type": "python",
             "request": "launch",
             "module": "flask",
             "env": {
-                "FLASK_APP": "${workspaceFolder}/src/run.py"
+                "FLASK_APP": "src/run.py"
             },
-            "envFile": "${workspaceFolder}/.env",
+            "envFile": "${workspaceFolder}/config/env/.dev.env",
             "args": [
                 "run",
                 "--no-debugger",
@@ -61,11 +21,20 @@
             "jinja": true
         },
         {
-            "name": "Python: Current File (External Terminal)",
+            "name": "prod-Python: Flask",
             "type": "python",
             "request": "launch",
-            "program": "${file}",
-            "console": "externalTerminal"
+            "module": "flask",
+            "env": {
+                "FLASK_APP": "src/run.py"
+            },
+            "envFile": "${workspaceFolder}/config/env/.prod.env",
+            "args": [
+                "run",
+                "--no-debugger",
+                "--no-reload"
+            ],
+            "jinja": true
         }
     ]
 }
