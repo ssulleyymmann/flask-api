@@ -3,11 +3,11 @@ version: "2"
 services:
   server:
     env_file:
-      - .env
-    image: python:3.7
-    working_dir: /mnt
+      - ./config/env/.dev.env
+    image: python:3.7.3
+    working_dir: /sre
     volumes:
-      - .:/mnt
+      - .:/sre
     ports:
-      - 5000:5000
-    command: python src/main.py
+      - 3000:3000
+    command: python src/run.py

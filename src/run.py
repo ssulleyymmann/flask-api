@@ -1,4 +1,8 @@
-import sys, os
+import os
+import sys
+# for docker 
+sys.path.append(os.path.join(os.path.dirname(__file__), '..'))
+from flask import jsonify, Flask
 
 from server.instance import server
 from resources.book import book
